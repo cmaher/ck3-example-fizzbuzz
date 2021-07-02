@@ -1,0 +1,9 @@
+﻿l_english:
+ cmt_fizzbuzz_decision_desc: "Start Fizzbuzz"
+ cmt_fizz: "Fizz"
+ cmt_buzz: "Buzz"
+ cmt_fizzbuzz: "FizzBuzz"
+ cmt_fizzbuzz_iter.t: "[ROOT.Var('fizzbuzz_iter').GetValue|0]"
+ cmt_fizzbuzz_iter.desc: "[ROOT.Var('fizzbuzz_iter').GetValue|0]"
+ cmt_next: "Next"
+ cmt_done: "Done"

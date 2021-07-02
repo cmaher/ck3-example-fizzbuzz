@@ -1,0 +1,11 @@
+cmt_fizzbuzz_decision = {
+	desc = cmt_fizzbuzz_decision_desc
+	
+	is_shown = {
+		is_ai = no
+	}
+	
+	effect = {
+		trigger_event = CMTFizzbuzz.10
+	}
+}

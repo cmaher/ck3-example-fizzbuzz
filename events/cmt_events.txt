@@ -1,0 +1,81 @@
+﻿namespace = CMTFizzbuzz
+
+CMTFizzbuzz.10 = {
+	type = character_event
+	right_portrait = root
+	theme = intrigue
+	desc = cmt_fizzbuzz_iter.desc
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_variable = fizzbuzz_iter }
+			}
+			set_variable = {
+				name = fizzbuzz_iter
+				value = 1
+			}
+		}
+		else = {
+			change_variable = {
+				name = fizzbuzz_iter
+				add = 1
+			}
+		}
+		
+		set_variable = {
+			name = fizzbuzz_iter_mod15
+			value = var:fizzbuzz_iter
+		}
+		change_variable = {
+			name = fizzbuzz_iter_mod15
+			modulo = 15
+		}
+		
+		set_variable = {
+			name = fizzbuzz_iter_mod5
+			value = var:fizzbuzz_iter
+		}
+		change_variable = {
+			name = fizzbuzz_iter_mod5
+			modulo = 5
+		}
+		
+		set_variable = {
+			name = fizzbuzz_iter_mod3
+			value = var:fizzbuzz_iter
+		}
+		change_variable = {
+			name = fizzbuzz_iter_mod3
+			modulo = 3
+		}
+	}
+	
+	title = {
+		first_valid = {
+			triggered_desc = {
+				desc = cmt_fizzbuzz
+				trigger = { var:fizzbuzz_iter_mod15 = 0 }
+			}
+			triggered_desc = {
+				desc = cmt_fizz
+				trigger = { var:fizzbuzz_iter_mod3 = 0 }
+			}
+			triggered_desc = {
+				desc = cmt_buzz
+				trigger = { var:fizzbuzz_iter_mod5 = 0 }
+			}
+			desc = cmt_fizzbuzz_iter.t
+		}
+	}
+	
+	option = {
+		name = cmt_next
+		trigger_event = CMTFizzbuzz.10
+	}
+	
+	option = {
+		name = cmt_done
+		remove_variable = fizzbuzz_iter
+	}
+}
